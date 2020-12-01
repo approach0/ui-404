@@ -31,16 +31,45 @@
     color: #eba000;
     padding: 0 1rem;
   }
+
+  #n-sec {
+    display: inline-block;
+    min-width: 1rem;
+    text-align: center;
+  }
+
+  a {
+    color: hotpink;
+  }
   </style>
 </head>
-<body>
+<body onload="onload()">
   <div id="container">
     <div>
       <img src="404.png" style="width: 100%; max-width: 654px;"/>
     </div>
     <p>
-      No worry, I will lead you the road in a few secounds ...
+      No worry, I will lead you the road in just <span id="n-sec">3</span> secounds ...
+    </p>
+    <p>
+      Click <a href="/search">here</a> if you want to go straight ahead!
     </p>
   </div>
+
+  <script type="text/javascript">
+  function onload() {
+    var redirect_url = '/search'
+    var cnt = 3
+    setInterval(function() {
+      var elem = document.getElementById('n-sec')
+      elem.innerHTML = '' + cnt
+      if (cnt <= 0) {
+        window.location.replace(redirect_url)
+      } else {
+        cnt -= 1
+      }
+    }, 1000)
+  }
+  </script>
 </body>
 </html>
