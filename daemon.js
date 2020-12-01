@@ -25,6 +25,6 @@ app.get('/', async (req, res) => {
 })
 
 app.use(function(req, res, next) {
-  res.sendFile(_404_page)
+  res.redirect('/404/')
 
 })
