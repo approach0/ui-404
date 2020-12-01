@@ -8,7 +8,7 @@ on:
 
 env:
   # EDIT this env variable
-  IMAGE_ID: uhub.service.ucloud.cn/ui-404
+  IMAGE_ID: uhub.service.ucloud.cn/ga6840/ui-404
 
 jobs:
 
